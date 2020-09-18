@@ -4,7 +4,7 @@
 
 | 版本号 | 开发日期 | 实现功能 
 | ----  | ----  | ---- |
-| v1.0 | 2020.9.16 | 实现Socket + 原始Serializable序列化 + BIO |
+| v1.0 | 2020.9.16 | 实现Socket + 原始Serializable + BIO + 默认JDK代理模式 |
 
 ### 开发环境
 
