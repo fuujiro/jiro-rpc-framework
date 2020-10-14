@@ -2,6 +2,8 @@ package com.fuujiro.client;
 
 import com.fuujiro.entity.RpcRequest;
 import com.fuujiro.entity.RpcResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -10,8 +12,10 @@ import java.lang.reflect.Proxy;
 /**
  * Created by fzy at 4:08 PM on 2020/9/16.
  */
+// 对于客户端，实现动态代理
 public class RpcClientProxy implements InvocationHandler {
 
+    private static final Logger logger = LoggerFactory.getLogger(RpcClientProxy.class);
     private String host;
     private int port;
 
@@ -27,6 +31,7 @@ public class RpcClientProxy implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        logger.info("调用方法：{}#{}", method.getDeclaringClass().getName(), method.getName());
         RpcRequest rpcRequest = RpcRequest.builder()
                 .interfaceName(method.getDeclaringClass().getName())
                 .methodName(method.getName())
@@ -34,6 +39,6 @@ public class RpcClientProxy implements InvocationHandler {
                 .paramTypes(method.getParameterTypes())
                 .build();
         RpcClient rpcClient = new RpcClient();
-        return ((RpcResponse) rpcClient.sendRequest(rpcRequest, host, port)).getData();
+        return rpcClient.sendRequest(rpcRequest, host, port);
     }
 }
