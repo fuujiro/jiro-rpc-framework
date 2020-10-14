@@ -1,7 +1,6 @@
 package com.fuujiro.client;
 
 import com.fuujiro.entity.RpcRequest;
-import com.fuujiro.entity.RpcResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
