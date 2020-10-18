@@ -2,6 +2,8 @@ package client;
 
 import entity.RpcRequest;
 import entity.RpcResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -14,6 +16,8 @@ import java.lang.reflect.Proxy;
 // 通过动态代理的方式生成实例
 
 public class RpcClientProxy implements InvocationHandler {
+
+    private static final Logger logger = LoggerFactory.getLogger(RpcClientProxy.class);
 
     private String host;
     private int port;
