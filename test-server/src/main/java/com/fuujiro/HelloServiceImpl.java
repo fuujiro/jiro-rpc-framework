@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Created by fzy at 17:46 on 2020/10/19.
  */
-public class HelloServiceImpl implements HelloService {
+public class HelloServiceImpl implements HelloService, TestService {
 
     private static final Logger logger = LoggerFactory.getLogger(HelloServiceImpl.class);
 
@@ -16,4 +16,8 @@ public class HelloServiceImpl implements HelloService {
         return "这是调用的返回值，id=" + object.getId();
     }
 
+    @Override
+    public String test(HelloObject object) {
+        return null;
+    }
 }
