@@ -1,6 +1,9 @@
 package com.fuujiro;
 
-import com.fuujiro.netty.client.NettyClient;
+import com.fuujiro.serializer.ProtobufSerializer;
+import com.fuujiro.transport.RpcClient;
+import com.fuujiro.transport.RpcClientProxy;
+import com.fuujiro.transport.netty.client.NettyClient;
 
 /**
  * Created by fzy at 17:46 on 2020/10/19.
@@ -8,7 +11,8 @@ import com.fuujiro.netty.client.NettyClient;
 public class NettyTestClient {
 
     public static void main(String[] args) {
-        RpcClient client = new NettyClient("127.0.0.1", 9999);
+        RpcClient client = new NettyClient();
+        client.setSerializer(new ProtobufSerializer());
         RpcClientProxy rpcClientProxy = new RpcClientProxy(client);
         HelloService helloService = rpcClientProxy.getProxy(HelloService.class);
         HelloObject object = new HelloObject(12, "This is a message");
