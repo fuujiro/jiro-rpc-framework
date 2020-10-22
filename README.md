@@ -18,7 +18,7 @@
 
 ### jar包环境
 
-```java
+```xml
 <dependency>
     <groupId>org.projectlombok</groupId>
     <artifactId>lombok</artifactId>

@@ -1,6 +1,7 @@
 package com.fuujiro;
 
 import com.fuujiro.register.ServiceRegistry;
+import com.fuujiro.serializer.CommonSerializer;
 import com.fuujiro.serializer.HessianSerializer;
 import com.fuujiro.serializer.KryoSerializer;
 import com.fuujiro.transport.socket.server.SocketServer;
@@ -11,9 +12,8 @@ import com.fuujiro.transport.socket.server.SocketServer;
 public class SocketTestServer {
 
     public static void main(String[] args) {
-        HelloService helloService = new HelloServiceImpl();
-        SocketServer socketServer = new SocketServer("127.0.0.1", 9998);
-        socketServer.setSerializer(new KryoSerializer());
+        HelloService helloService = new HelloServiceImpl2();
+        SocketServer socketServer = new SocketServer("127.0.0.1", 9998, CommonSerializer.HESSIAN_SERIALIZER);
         socketServer.publishService(helloService, HelloService.class);
     }
 
