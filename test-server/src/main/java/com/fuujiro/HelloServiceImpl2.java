@@ -1,11 +1,13 @@
 package com.fuujiro;
 
+import com.fuujiro.annotation.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * Created by fzy at 21:12 on 2020/10/22.
  */
+@Service
 public class HelloServiceImpl2 implements HelloService {
 
     private static final Logger logger = LoggerFactory.getLogger(HelloServiceImpl2.class);
