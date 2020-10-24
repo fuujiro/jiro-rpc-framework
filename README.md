@@ -1,5 +1,9 @@
 # jiro-rpc-framework
 
+### 项目架构图
+
+![rpc](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9jbi1ndW96aXlhbmcuZ2l0aHViLmlvL015LVJQQy1GcmFtZXdvcmsvaW1nL1JQQyVFNiVBMSU4NiVFNiU5RSVCNiVFNiU4MCU5RCVFOCVCNyVBRi5qcGVn?x-oss-process=image/format,png)
+
 ### 开发日志
 
 | 版本号 | 开发日期 | 实现功能 
@@ -17,23 +21,3 @@
 
 * JDK：1.8及以上
 * IDE：JetBrains IDEA
-
-### jar包环境
-
-```xml
-<dependency>
-    <groupId>org.projectlombok</groupId>
-    <artifactId>lombok</artifactId>
-    <version>1.18.12</version>
-</dependency>
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-api</artifactId>
-    <version>1.7.30</version>
-</dependency>
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-simple</artifactId>
-    <version>1.7.30</version>
-</dependency>
-```
